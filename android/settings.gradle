@@ -1,0 +1,3 @@
+rootProject.name = 'RNSaveAudio'
+
+include ':app'

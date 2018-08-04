@@ -1,0 +1,39 @@
+{
+  "name": "RNSaveAudio",
+  "version": "0.1.0",
+  "description":"Module for saving DSP audio to wav format from Double[] array.",
+  "main":"index.js",
+  "private": false,
+  "devDependencies": {
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "jest": "^23.4.2",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "~0.55.2"
+  }
+  "keywords": [
+    "Android",
+    "iOS",
+    "AudioSaving",
+    "WAV",
+    "DSP",
+    "Double[]",
+    "react-native"
+  ],
+  "author": "Navraj Kambo, NDART",
+  "license": "MIT"
+}
+
+}
