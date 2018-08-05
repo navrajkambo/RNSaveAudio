@@ -1,12 +1,40 @@
 {
-  "name": "RNSaveAudio",
-  "version": "1.0.0",
-  "description":"Module for saving DSP audio to wav format from Double[] array.",
-  "main":"index.js",
+  "_args": [
+    [
+      "RNSaveAudio@1.0.0",
+      "/Users/kambo/Documents/GitHub/NDART-RN"
+    ]
+  ],
+  "_from": "RNSaveAudio@1.0.0",
+  "_id": "RNSaveAudio@1.0.0",
+  "_inBundle": false,
+  "_location": "/RNSaveAudio",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "RNSaveAudio@1.0.0",
+    "name": "RNSaveAudio",
+    "escapedName": "RNSaveAudio",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_spec": "0.4.1",
+  "_where": "/Users/kambo/Documents/GitHub/NDART-RN",
+  "author": {
+    "name": "Navraj Kambo",
+  },
+  "bugs": {
+    "url": "https://github.com/navrajkambo/RNSaveAudio/issues"
+  },
+  "description": "React Native audio saving module used for DSP",
   "devDependencies": {
-    "babel-preset-react-native-stage-0": "^1.0.1",
-    "jest-react-native": "^18.0.0",
-    "react-test-renderer": "16.3.1"
+    "react": "16.2.0",
+    "react-native": "0.53.0"
   },
   "files": [
     "index.js",
@@ -14,11 +42,17 @@
     "android/build.gradle",
     "ios"
   ],
-  "scripts": {
-    "start": "react-native start",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "test": "jest"
+  "homepage": "https://github.com/navrajkambo/RNSaveAudio#readme",
+  "keywords": [
+    "react-native",
+    "audio-recording",
+    "recording"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "RNSaveAudio",
+  "peerDependencies": {
+    "react-native": ">=0.47"
   },
   "presets": [
     "react-native"
@@ -27,24 +61,16 @@
     "type": "git",
     "url": "git+https://github.com/navrajkambo/RNSaveAudio.git"
   },
-  "jest": {
-    "preset": "react-native"
+  "rnpm": {
+    "android": {
+      "sourceDir": "android"
+    }
   },
-  "dependencies": {
-    "react": "16.3.1",
-    "react-native": "~0.55.2"
-  }
-  "keywords": [
-    "Android",
-    "iOS",
-    "AudioSaving",
-    "WAV",
-    "DSP",
-    "Double[]",
-    "react-native"
-  ],
-  "author": "Navraj Kambo, NDART",
-  "license": "MIT"
-}
-
+  "scripts": {
+    "log-android": "node node_modules/react-native/local-cli/cli.js log-android",
+    "run-android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "run-ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "version": "1.0.0"
 }
