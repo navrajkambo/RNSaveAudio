@@ -1,4 +1,4 @@
-# ![NDART LOGO](https://raw.githubusercontent.com/speggos/NDART-RN/Navraj-Summer-2018/app/assets/images/icons/android/72x72.png?raw=true)
+# ![NDART LOGO](/app/assets/images/icons/android/72x72.png?raw=true)
 # NDART
 ## http://ndart.ca
 ##
