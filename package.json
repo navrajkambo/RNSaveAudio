@@ -1,21 +1,14 @@
 {
-  "_args": [
-    [
-      "RNSaveAudio@1.0.0",
-      "/Users/kambo/Documents/GitHub/NDART-RN"
-    ]
-  ],
-  "_from": "RNSaveAudio@1.0.0",
-  "_id": "RNSaveAudio@1.0.0",
+  "_from": "rnsaveaudio@1.0.0",
   "_inBundle": false,
   "_location": "/RNSaveAudio",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "RNSaveAudio@1.0.0",
-    "name": "RNSaveAudio",
-    "escapedName": "RNSaveAudio",
+    "raw": "rnsaveaudio@1.0.0",
+    "name": "rnsaveaudio",
+    "escapedName": "rnsaveaudio",
     "rawSpec": "1.0.0",
     "saveSpec": null,
     "fetchSpec": "1.0.0"
@@ -25,16 +18,15 @@
   ],
   "_spec": "0.4.1",
   "_where": "/Users/kambo/Documents/GitHub/NDART-RN",
-  "author": {
-    "name": "Navraj Kambo",
-  },
+  "author": "Navraj Kambo <nkambo1@my.bcit.ca>",
   "bugs": {
     "url": "https://github.com/navrajkambo/RNSaveAudio/issues"
   },
   "description": "React Native audio saving module used for DSP",
   "devDependencies": {
     "react": "16.2.0",
-    "react-native": "0.53.0"
+    "react-native": "0.53.0",
+    "babel-preset-react-native": "4.0.0"
   },
   "files": [
     "index.js",
@@ -45,12 +37,13 @@
   "homepage": "https://github.com/navrajkambo/RNSaveAudio#readme",
   "keywords": [
     "react-native",
-    "audio-recording",
-    "recording"
+    "audio-saving",
+    "wav",
+    "dsp"
   ],
   "license": "MIT",
   "main": "index.js",
-  "name": "RNSaveAudio",
+  "name": "rnsaveaudio",
   "peerDependencies": {
     "react-native": ">=0.47"
   },
