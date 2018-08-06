@@ -1,4 +1,4 @@
-package com.ndart.RNSaveAudio;
+package com.navraj.rnsaveaudio;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -12,19 +12,12 @@ import java.util.List;
 
 public class RNSaveAudioPackage implements ReactPackage {
     @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+        return Collections.<NativeModule>singletonList(new RNSaveAudioModule(reactContext));
     }
     
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
-    }
-    
-    @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new RNSaveAudioModule(reactContext))
-        return modules;
     }
 }

@@ -1,4 +1,4 @@
-package com.ndart.RNSaveAudio;
+package com.navraj.rnsaveaudio;
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -17,7 +17,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.DataOutputStream;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.io.IOException;
+import java.lang.String;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -34,11 +36,11 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
     }
     
     @ReactMethod
-    public void saveWav(string path, ReadableArray audio, final Promise promise);
+    public void saveWav(String path, ReadableArray audio, final Promise promise){
         try {
-            byte[] newaudio;
+            byte[] newaudio = new byte[audio.size()];
             for(int i=0; i<audio.size();i++){
-                newaudio.add((byte) audio[i]);
+                newaudio[i] = ((byte) audio.getDouble(i));
             }
             boolean result = SaveFile(path, newaudio);
             promise.resolve(result);
@@ -46,9 +48,10 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
             promise.reject("ERR_UNEXPECTED_EXCEPTION", ex);
         }
     }
-    private boolean SaveFile(string path, byte[] rawData){
+    private boolean SaveFile(String path, byte[] rawData) throws Exception{
 
         DataOutputStream output = null;
+        boolean ret = true;
         try {
             output = new DataOutputStream(new FileOutputStream(path));
             // WAVE header
@@ -68,20 +71,21 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
             writeInt(output, rawData.length); // subchunk 2 size
             // Audio data (conversion big endian -> little endian)
             short[] shorts = new short[rawData.length / 2];
-            ByteBuffer.wrap(rawData).order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(shorts);
             ByteBuffer bytes = ByteBuffer.allocate(shorts.length * 2);
+            bytes.wrap(rawData).order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(shorts);
+            
             for (short s : shorts) {
                 bytes.putShort(s);
             }
-            for()
             output.write(rawData);
+        } catch (Exception err) {
+            return ret;
         } finally {
             if (output != null) {
                 output.close();
-                return true
+                ret = false;
             }
-        } catch {
-return false;
+            return ret;
         }
     }
 
