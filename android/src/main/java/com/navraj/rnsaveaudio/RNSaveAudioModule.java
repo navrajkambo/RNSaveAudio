@@ -29,18 +29,18 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
     public RNSaveAudioModule(ReactApplicationContext reactContext) {
         super(reactContext);
     }
-    
+
     @Override
     public String getName() {
         return "RNSaveAudio";
     }
-    
+
     @ReactMethod
     public void saveWav(String path, ReadableArray audio, final Promise promise){
         try {
             short[] newaudio = new short[audio.size()];
             for(int i=0; i<audio.size();i++){
-                newaudio[i] = ((short) audio.getDouble(i));
+                newaudio[i] = (short) (audio.getInt(i) & 0xFFFF);
             }
             boolean result = SaveFile(path, newaudio);
             promise.resolve(result);
@@ -53,7 +53,6 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
         DataOutputStream output = null;
         boolean ret = true;
         byte[] data = get16BitPcm(rawData);
-        
         try {
             output = new DataOutputStream(new FileOutputStream(path));
             // WAVE header
@@ -71,17 +70,16 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
             writeShort(output, (short) 16); // bits per sample
             writeString(output, "data"); // subchunk 2 id
             writeInt(output, data.length); // subchunk 2 size
-            
-            output.write(data);
+
             // Audio data (conversion big endian -> little endian)
-            //short[] shorts = new short[rawData.length / 2];
-            //ByteBuffer bytes = ByteBuffer.allocate(shorts.length * 2);
-            //bytes.wrap(rawData).order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(shorts);
-            
-            //for (short s : shorts) {
-            //    bytes.putShort(s);
-            //}
-            //output.write(rawData);
+            ByteBuffer buffer = ByteBuffer.allocate(2*rawData.length);
+            buffer.order(ByteOrder.LITTLE_ENDIAN);
+            for(short i: rawData){
+                buffer.putShort(i);
+            }
+            byte[] bytes = buffer.array();
+            output.write(bytes);
+
         } catch (Exception err) {
             return ret;
         } finally {
@@ -103,7 +101,7 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
         }
         return bytes;
     }
-    
+
     private byte[] get16BitPcm(short[] data) {
         byte[] resultData = new byte[2 * data.length];
         int iter = 0;
@@ -114,7 +112,7 @@ public class RNSaveAudioModule extends ReactContextBaseJavaModule {
         }
         return resultData;
     }
-    
+
     private void writeInt(final DataOutputStream output, final int value) throws IOException {
         output.write(value >> 0);
         output.write(value >> 8);
