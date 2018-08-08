@@ -4,20 +4,24 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(saveWav: (NSString *)path (NSArray *)audio (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+RCT_EXPORT_METHOD(saveWav: (NSString *)path
+                  andArray:(NSArray *)audio
+                  acceptor:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject){
     short int newaudio[[audio count]];
 	
 	for(NSInteger i=0; i<[audio count]; i++){
 		id element = [audio objectAtIndex:i];
 		newaudio[i] = [element intValue] & 0xffff]];
 	}
-    boolean result = [self SaveFile:(NSString*)path (short int)newaudio];
+    bool result = [self SaveFile:(NSString*)path (short int)newaudio];
     resolve(result);
 }
 
--(bool) SaveFile:(NSString*)path (short int)rawData {
+-(bool) SaveFile:(NSString*)path
+        andArray:(short int [])rawData {
 	bool ret = true;
-    NSData *data = [data:[self get16BitPcm:rawData]];
+    NSData *data = [data [self get16BitPcm:rawData]];
 
 	// WAVE header
     // see http://ccrma.stanford.edu/courses/422/projects/WaveFormat/
@@ -94,18 +98,18 @@ RCT_EXPORT_METHOD(saveWav: (NSString *)path (NSArray *)audio (RCTPromiseResolveB
     [wavFileData appendBytes:[data bytes] length:[data length]];
 	//NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	//NSString *filePath = [documentsPath stringByAppendingPathComponent:@"file.txt"];
-	[newWavData writeToFile:path atomically:YES];	
+	[wavFileData writeToFile:path atomically:YES];
 }
 
--(NSData*) get16BitPcm:(short int)data {
-	length = sizeof(data)/sizeof(short int);
-	NSData *resultData = [NSData length:[length*2]];
+-(NSMutableData*) get16BitPcm:(short int [])data {
+	int length = sizeof(data)/sizeof(short int);
+	NSMutableData *resultData = [[NSMutableData init] length:length*2];
 	
 	//*little_endian_short_array = NSSwapShort();
 	
 	int iter = 0;
 	for (int i=0; i<length; i++){
-		sample = data[i];
+        short int sample = data[i];
         short int maxSample = (sample * 32767); // 32767 is Short.MAX_VAL equivalent
         [resultData insertObject:[char (maxSample & 0x00ff)] atIndex:iter++];
         [resultData insertObject:[char ((maxSample & 0xff00) >> 8)] atIndex:iter++];
@@ -117,35 +121,5 @@ RCT_EXPORT_METHOD(saveWav: (NSString *)path (NSArray *)audio (RCTPromiseResolveB
 	
 	return endianData;
 }
-	
-/*	
-void inputCallback(
-        void *inUserData,
-        AudioQueueRef inAQ,
-        AudioQueueBufferRef inBuffer,
-        const AudioTimeStamp *inStartTime,
-        UInt32 inNumberPacketDescriptions,
-        const AudioStreamPacketDescription *inPacketDescs) {
-    [(__bridge Recording *) inUserData processInputBuffer:inBuffer queue:inAQ];
-}
-
-- (void)processInputBuffer:(AudioQueueBufferRef)inBuffer queue:(AudioQueueRef)queue {
-    SInt16 *audioData = inBuffer->mAudioData;
-    UInt32 count = inBuffer->mAudioDataByteSize / sizeof(SInt16);
-    for (int i = 0; i < _bufferSize; i++) {
-        _audioData[i] = @(audioData[i]);
-    }
-    [self sendEventWithName:@"recording" body:[NSArray arrayWithObjects:_audioData count:count]];
-    AudioQueueEnqueueBuffer(queue, inBuffer, 0, NULL);
-}
-
-- (NSArray<NSString *> *)supportedEvents {
-    return @[@"recording"];
-}
-
-- (void)dealloc {
-    AudioQueueStop(_queue, YES);
-}
-*/
 
 @end
