@@ -1,4 +1,4 @@
-# ![NDART LOGO](/android/src/main/res/raw/72x72.png?raw=true)
+# ![NDART LOGO](/72x72.png?raw=true)
 # NDART
 ## http://ndart.ca
 ##
@@ -7,10 +7,29 @@
 ### Purpose
 The purpose of this module is to take an array of int16 data from javascript, and create a .wav file from that data, on Android and iOS devices natively. This module is essentially suppose to provide a sink when working with the `react-native-recording` module (https://www.npmjs.com/package/react-native-recording). More information can be found on the projects respective github homepage page -> https://github.com/qiuxiang/react-native-recording#readme...
 ### Installation
-- To install, run `npm install rnsaveaudio`
-- Make sure to link the module __(look online for more information)__
+1) To install, run `npm install rnsaveaudio`
+2) Edit `/android/settings.gradle` and add the following lines...
+``` java
+include ':rnsaveaudio'
+project(':rnsaveaudio').projectDir = new File(rootProject.projectDir, '../node_modules/rnsaveaudio/android')
+```
+3) Edit `/android/app/build.gradle` and add the following line inside of `dependencies`...
+``` java
+compile project(':rnsaveaudio')
+```
+4) Edit `/android/app/src/main/java/.../MainApplication.java` with the follow lines...
+- Import the module at the top of the file
+```java
+import com.navraj.rnsaveaudio.RNSaveAudioPackage;
+```
+- Instantiate the package inside of the `getPackages()` method
+```java
+new RNSaveAudioPackage()
+```
+5) run the command `cd android && gradlew clean && cd ../` for windows, or `cd android && ./gradlew clean && cd ../` for OSX, inside the root directory of your react-native project
+__Make sure to link the module (look online for more information)__
 ### Notes
-- Currently exports on Android only, however play static... (working on resolving the issue)
+- Currently exports on Android only
 - Working on iOS soon...
 ### Useage
 - Import the module using `import RNSaveAudio from 'rnsaveaudio';`

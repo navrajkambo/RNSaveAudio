@@ -1,4 +1,4 @@
-# ![NDART LOGO](/android/src/main/res/raw/72x72.png?raw=true)
+# ![NDART LOGO](/72x72.png?raw=true)
 # NDART
 ## http://ndart.ca
 ##
