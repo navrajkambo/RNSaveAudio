@@ -34,7 +34,7 @@ __Make sure to link the module (look online for more information)__
 ### Useage
 - Import the module using `import RNSaveAudio from 'rnsaveaudio';`
 - Export audio using `RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray);`
-- Make sure to include the keywords `await` and `async` if used inside of a function, eg. `async func(prop){ const var = await RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray); }`
+- Make sure to include the keywords `await` and `async` if used inside of a function, eg. `async func(prop){ const variable = await RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray); }`
 ### Contact Information
 - My email is `nkambo1@my.bcit.ca`, use the module name in the subject line.
 - Submit an issue to the github page. http://github.com/navrajkambo/RNSaveAudio/issues
