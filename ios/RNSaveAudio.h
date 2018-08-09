@@ -1,6 +1,6 @@
 #import <AVFoundation/AVFoundation.h>
-//#import <React/RCTEventEmitter.h>
-#import <React/RCTBridgeModule.h>
+//#import <RCTEventEmitter.h>
+#import <RCTEventEmitter.h>
 
 @interface RNSaveAudio : NSObject <RCTBridgeModule>
 
@@ -8,6 +8,6 @@
 
 -(bool) SaveFile:(NSString*)path
         andArray:(short int [])rawData;
--(NSData*) get16BitPcm:(short int [])data;
+-(NSMutableData*) get16BitPcm:(short int*)data;
 
 @end
