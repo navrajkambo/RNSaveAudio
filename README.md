@@ -3,7 +3,7 @@
 ## http://ndart.ca
 ##
 ## RNSaveAudio Module
-### React-Native [Home](README.md) [Useful Links](UsefulLinks.md)
+### React-Native [Home](README.md) [Useful Links](UsefulLinks.md) [Custom Module Tutorial](Tut.md)
 ###
 ### Purpose
 The purpose of this module is to take an array of int16 data from javascript, and create a .wav file from that data, on Android and iOS devices natively. This module is essentially suppose to provide a sink when working with the `react-native-recording` module (https://www.npmjs.com/package/react-native-recording). More information can be found on the projects respective github homepage page -> https://github.com/qiuxiang/react-native-recording#readme...
@@ -30,11 +30,12 @@ new RNSaveAudioPackage()
 ```
 5) run the command `cd android && gradlew clean && cd ../` for windows, or `cd android && ./gradlew clean && cd ../` for OSX, inside the root directory of your react-native project
 #### iOS
-- Coming Soon...
-__Make sure to link the module (look online for more information)__
+1) Open your xCode project and add the `RNSaveAudio.xcodeproj` file to your project
+2) Go to your project's build phases, and add the `libRNSaveAudio.a` file to the list labeled `Link Binary With Libraries`, using the `+` under the list
+- For more information, look at https://github.com/maxs15/react-native-spinkit/wiki/Manual-linking---IOS
 ### Notes
 - Currently exports on Android only (Tested)
-- Working on iOS soon... (Testing)
+- Testing iOS... (Compiles, debugging error)
 ### Useage
 - Import the module using `import RNSaveAudio from 'rnsaveaudio';`
 - Export audio using `RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray);`
