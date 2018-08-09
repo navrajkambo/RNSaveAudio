@@ -1,22 +1,22 @@
 {
-  "_from": "rnsaveaudio@1.0.4",
+  "_from": "rnsaveaudio@1.0.5",
   "_inBundle": false,
   "_location": "/RNSaveAudio",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "rnsaveaudio@1.0.4",
+    "raw": "rnsaveaudio@1.0.5",
     "name": "rnsaveaudio",
     "escapedName": "rnsaveaudio",
-    "rawSpec": "1.0.4",
+    "rawSpec": "1.0.5",
     "saveSpec": null,
-    "fetchSpec": "1.0.4"
+    "fetchSpec": "1.0.5"
   },
   "_requiredBy": [
     "/"
   ],
-  "_spec": "1.0.4",
+  "_spec": "1.0.5",
   "_where": "/Users/kambo/Documents/GitHub/NDART-RN",
   "author": "Navraj Kambo <nkambo1@my.bcit.ca>",
   "bugs": {
@@ -65,7 +65,7 @@
     "run-ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "react-native-cli": "^2.0.1"
   }
