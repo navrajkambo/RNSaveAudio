@@ -25,7 +25,8 @@ java
 |              |
 |	       +-- modPackage.java
 ```
-  )
+)
+
 2) Inside the android folder, create the following file structure:
 ```
 .
