@@ -3,7 +3,8 @@
 ## http://ndart.ca
 ##
 ## RNSaveAudio Module
-### React-Native
+### React-Native [Home](README.md) [Useful Links](UsefulLinks.md) [Custom Module Tutorial](Tut.md)
+### 
 ### Usefull Links
 - https://stackoverflow.com/questions/11877914/saving-and-retrieving-sint16-from-nsmutabledata
 - https://stackoverflow.com/questions/48452391/changing-nsdata-byte-order-to-little-endian
@@ -15,3 +16,4 @@
 - https://shellmonger.com/2018/01/19/creating-a-react-native-bridge-library/
 - https://stackoverflow.com/questions/14436549/how-to-find-the-array-index-value-in-objective-c
 - https://gist.github.com/chourobin/f83f3b3a6fd2053fad29fff69524f91c#file-properties-md
+- https://eastcodes.com/packaging-and-sharing-react-native-modules

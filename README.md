@@ -3,10 +3,12 @@
 ## http://ndart.ca
 ##
 ## RNSaveAudio Module
-### React-Native
+### React-Native [Home](README.md) [Useful Links](UsefulLinks.md) [Custom Module Tutorial](Tut.md)
+###
 ### Purpose
 The purpose of this module is to take an array of int16 data from javascript, and create a .wav file from that data, on Android and iOS devices natively. This module is essentially suppose to provide a sink when working with the `react-native-recording` module (https://www.npmjs.com/package/react-native-recording). More information can be found on the projects respective github homepage page -> https://github.com/qiuxiang/react-native-recording#readme...
 ### Installation
+#### Android
 1) To install, run `npm install rnsaveaudio`
 2) Edit `/android/settings.gradle` and add the following lines...
 ``` java
@@ -27,10 +29,17 @@ import com.navraj.rnsaveaudio.RNSaveAudioPackage;
 new RNSaveAudioPackage()
 ```
 5) run the command `cd android && gradlew clean && cd ../` for windows, or `cd android && ./gradlew clean && cd ../` for OSX, inside the root directory of your react-native project
-__Make sure to link the module (look online for more information)__
+#### iOS
+1) Open your xCode project and add the `RNSaveAudio.xcodeproj` file to your project
+2) Go to your project's build phases, and add the `libRNSaveAudio.a` file to the list labeled `Link Binary With Libraries`, using the `+` under the list
+- If you get an error saying xCode cannot find `<RCTEventEmitter.h>`, open `RNSaveAudio.h` inside of the `ios` project folder, and change the the header to `<React/RCTEventEmitter.h>`
+- For more information, look at https://github.com/maxs15/react-native-spinkit/wiki/Manual-linking---IOS
 ### Notes
-- Currently exports on Android only (Tested)
-- Working on iOS soon... (Testing)
+- Version 1.0.6 is current
+- Works on Android and iOS (Tested)
+- Sends a promise when complete
+- Creates a .wav file based on an array of signed short (SInt16) values at a frequency of 44.1kHz
+- Meant to work with react-native-recording node package and react-native-fs package
 ### Useage
 - Import the module using `import RNSaveAudio from 'rnsaveaudio';`
 - Export audio using `RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray);`
@@ -40,4 +49,4 @@ __Make sure to link the module (look online for more information)__
 - Submit an issue to the github page. http://github.com/navrajkambo/RNSaveAudio/issues
 ### Other Information
 - If you feel like contributing, send me a message or open an issue! Any help is appriciated :)
-- For more information on bridging native modules to react-native, have a look at https://gist.github.com/chourobin/f83f3b3a6fd2053fad29fff69524f91c, and http://matthewsessions.com/2017/10/27/developing-rn-module.html. They are very informative!
+- For more information on bridging native modules to react-native, have a look at https://gist.github.com/chourobin/f83f3b3a6fd2053fad29fff69524f91c, https://eastcodes.com/packaging-and-sharing-react-native-modules, and http://matthewsessions.com/2017/10/27/developing-rn-module.html. They are very informative!
