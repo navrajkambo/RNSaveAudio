@@ -235,7 +235,7 @@ Project Root
 |			 |
 |			 +-- navraj
 |			      |
-|			      +-- mod
+|			      +-- module
 |			  	    |
 |			  	    +-- modModule.java
 |			  	    |
