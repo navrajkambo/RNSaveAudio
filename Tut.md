@@ -224,7 +224,7 @@ Project Root
 |
 +-- android
 |    |
-|   +-- src
+|    +-- src
 |        |
 |        +-- main
 |             |
