@@ -214,7 +214,7 @@ yourmethodhere: (path, arrayfromjs) => mod.yourmethodhere(path, arrayfromjs),
 - `$(SRCROOT)/../../../React`
 - `$(SRCROOT/../../react-native/React)`
 16) Run `npm init` to create a `package.json` file with all the relevant details for your package, and make sure to set your entry point as `index.js`
-17) Run `npm publish` to add your package to `https://npmjs.com`, assuming you're signed into your npmjs account (look only for instructions on how to do this)
+17) Run `npm publish` to add your package to `https://npmjs.com`, assuming you're signed into your npmjs account (look online for instructions on how to do this)
 18) Create a new project, and install it using `npm install mod` (change mod with your package name)
 - You should add optional `LICENSE` and `README.md` files to your project
 ### Directory Structure
