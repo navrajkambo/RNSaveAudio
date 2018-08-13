@@ -17,7 +17,7 @@ java
 |
 +-- com
 |     |
-|    +-- navraj
+|     +-- navraj
 |         |
 |	  +-- module
 |              |
@@ -33,7 +33,7 @@ Project Root
 |
 +-- android
 |    |
-|   +-- src
+|    +-- src
 |        |
 |        +-- main
 |             |
@@ -41,7 +41,7 @@ Project Root
 |             |
 |	      +-- java
 |		    |
-|		   +-- domain... (look above)
+|		    +-- domain... (look above)
 |			  |
 |			  +-- modModule.java
 |			  |
@@ -231,7 +231,7 @@ Project Root
 |             |
 |	      +-- java
 |		    |
-|		   +-- com
+|		    +-- com
 |			 |
 |			 +-- navraj
 |			      |
