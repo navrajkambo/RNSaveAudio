@@ -170,7 +170,7 @@ RCT_EXPORT_MODULE();
 
 // this will be exported
 RCT_EXPORT_METHOD(yourmethodhere:(NSString*)path
-						  andArray:(NSArray*)arrayfromjs
+			andArray:(NSArray*)arrayfromjs
                      andacceptor:(RCTPromiseResolveBlock)resolve
                      andrejecter:(RCTPromiseRejectBlock)reject){
 
