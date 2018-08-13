@@ -32,10 +32,14 @@ new RNSaveAudioPackage()
 #### iOS
 1) Open your xCode project and add the `RNSaveAudio.xcodeproj` file to your project
 2) Go to your project's build phases, and add the `libRNSaveAudio.a` file to the list labeled `Link Binary With Libraries`, using the `+` under the list
+- If you get an error saying xCode cannot find `<RCTEventEmitter.h>`, open `RNSaveAudio.h` inside of the `ios` project folder, and change the the header to `<React/RCTEventEmitter.h>`
 - For more information, look at https://github.com/maxs15/react-native-spinkit/wiki/Manual-linking---IOS
 ### Notes
-- Currently exports on Android only (Tested)
-- Testing iOS... (Compiles, debugging error)
+- Version 1.0.6 is current
+- Works on Android and iOS (Tested)
+- Sends a promise when complete
+- Creates a .wav file based on an array of signed short (SInt16) values at a frequency of 44.1kHz
+- Meant to work with react-native-recording node package and react-native-fs package
 ### Useage
 - Import the module using `import RNSaveAudio from 'rnsaveaudio';`
 - Export audio using `RNsaveAudio.saveWav(PATH+'/filename.wav',dataArray);`
