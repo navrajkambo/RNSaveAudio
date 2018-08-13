@@ -2,7 +2,7 @@
 # NDART
 ## http://ndart.ca
 ##
-## RNSaveAudio Module
+## RNSaveAudio Module [![npm version](https://badge.fury.io/js/rnsaveaudio.svg)](https://badge.fury.io/js/rnsaveaudio)
 ### React-Native | [Home](README.md) | [Useful Links](UsefulLinks.md) | [Custom Module Tutorial](Tut.md)
 ###
 ### Purpose
