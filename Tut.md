@@ -11,6 +11,7 @@
 3) From your root directory, create two folders: `android` & `ios`
 #### Android
 1) Figure out a package domain name and package name, because the associated directory structure is dependant on it (eg. domain module.navraj.com -> `com.navraj.module` in java with the package `mod` follow directory structure: 
+```
 .
 java
 |
@@ -23,8 +24,10 @@ java
 |	       +-- modModule.java
 |              |
 |	       +-- modPackage.java
+```
   )
 2) Inside the android folder, create the following file structure:
+```
 .
 Project Root
 |
@@ -43,7 +46,7 @@ Project Root
 |			  +-- modModule.java
 |			  |
 |			  +-- modPackage.java 
-
+```
 3) Open `AndroidManifest.xml` and add the following,
 ``` xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.navraj.module">
@@ -207,13 +210,14 @@ yourmethodhere: (path, arrayfromjs) => mod.yourmethodhere(path, arrayfromjs),
 13) When you're ready to publish your module, delete the `node_modules` folder
 14) Open your module header file (`mod.h` in my case) and change `#import <RCTEventEmitter.h>`  to `#import <React/RCTEventEmitter.h>` (or equivalent, if you didn't use `RCTEventEmitter.h`)
 15) Redo steps 4) to 7), except replace the paths as follows:
-- `(SRCROOT)/../../../React`
-- `(SRCROOT/../../react-native/React)`
+- `$(SRCROOT)/../../../React`
+- `$(SRCROOT/../../react-native/React)`
 16) Run `npm init` to create a `package.json` file with all the relevant details for your package, and make sure to set your entry point as `index.js`
 17) Run `npm publish` to add your package to `https://npmjs.com`, assuming you're signed into your npmjs account (look only for instructions on how to do this)
 18) Create a new project, and install it using `npm install mod` (change mod with your package name)
 - You should add optional `LICENSE` and `README.md` files to your project
 ### Directory Structure
+```
 .
 Project Root
 |
@@ -248,3 +252,4 @@ Project Root
 +-- package.json
 |
 +-- index.js
+```
