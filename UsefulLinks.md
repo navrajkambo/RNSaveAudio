@@ -3,7 +3,7 @@
 ## http://ndart.ca
 ##
 ## RNSaveAudio Module
-### React-Native [Home](README.md) [Useful Links](UsefulLinks.md) [Custom Module Tutorial](Tut.md)
+### React-Native | [Home](README.md) | [Useful Links](UsefulLinks.md) | [Custom Module Tutorial](Tut.md)
 ### 
 ### Usefull Links
 - https://stackoverflow.com/questions/11877914/saving-and-retrieving-sint16-from-nsmutabledata

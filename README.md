@@ -3,7 +3,7 @@
 ## http://ndart.ca
 ##
 ## RNSaveAudio Module
-### React-Native [Home](README.md) [Useful Links](UsefulLinks.md) [Custom Module Tutorial](Tut.md)
+### React-Native | [Home](README.md) | [Useful Links](UsefulLinks.md) | [Custom Module Tutorial](Tut.md)
 ###
 ### Purpose
 The purpose of this module is to take an array of int16 data from javascript, and create a .wav file from that data, on Android and iOS devices natively. This module is essentially suppose to provide a sink when working with the `react-native-recording` module (https://www.npmjs.com/package/react-native-recording). More information can be found on the projects respective github homepage page -> https://github.com/qiuxiang/react-native-recording#readme...
