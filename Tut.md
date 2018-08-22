@@ -252,5 +252,7 @@ Project Root
 |
 +-- package.json
 |
++-- node_modules
+|
 +-- index.js
 ```
