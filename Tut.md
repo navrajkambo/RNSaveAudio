@@ -191,7 +191,7 @@ RCT_EXPORT_METHOD(yourmethodhere:(NSString*)path
 	}
 }
 
--(bool) privatemethodhere:(NSString*)path withdata:(SInt16*)rawData {
+-(bool) privatemethodhere:(NSString*)path withdata:(NSArray*)rawData {
 	return true;
 }
 
